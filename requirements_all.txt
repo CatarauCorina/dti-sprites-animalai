@@ -130,9 +130,9 @@ sklearn==0.0
 smmap==5.0.0
 soupsieve==2.3.2.post1
 stack-data==0.3.0
-tensorboard==2.9.1
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.1
+#tensorboard==2.9.1
+#tensorboard-data-server==0.6.1
+#tensorboard-plugin-wit==1.8.1
 termcolor==1.1.0
 terminado==0.15.0
 threadpoolctl==2.1.0
