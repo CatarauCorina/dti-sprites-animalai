@@ -1,4 +1,5 @@
-sudo apt-get update -y;
+sudo add-apt-repository ppa:deadsnakes/ppa;
+sudo apt-get update;
 sudo apt-get install python3.8;
 
 pip install virtualenv;
