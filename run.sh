@@ -6,4 +6,5 @@ virtualenv sprites --python=python3.8;
 source sprites/bin/activate;
 python --version;
 pip install seaborn;
+export IS_SERVER="True";
 pip install -r requirements_all.txt && python src/trainer.py --tag default --config clevr6.yml;
