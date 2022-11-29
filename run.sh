@@ -2,7 +2,7 @@ sudo add-apt-repository ppa:deadsnakes/ppa;
 sudo apt-get update;
 sudo apt-get install python3.8;
 pip install virtualenv;
-virtualenv sprites --python=python3.8;
+source sprites/bin/activate || virtualenv sprites --python=python3.8;
 source sprites/bin/activate;
 python --version;
 pip install seaborn;
