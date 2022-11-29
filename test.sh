@@ -2,4 +2,5 @@ sudo add-apt-repository ppa:deadsnakes/ppa;
 sudo apt-get update;
 sudo apt-get install python3.8;
 pip install virtualenv;
-source /content/drive/MyDrive/sprites/test/bin/activate || virtualenv test --python=python3.8 && pip -V;
+chmod 755 /content/drive/MyDrive/sprites/sprites/bin/python
+source /content/drive/MyDrive/sprites/sprites/bin/activate || virtualenv sprites --python=python3.8 && pip -V;
