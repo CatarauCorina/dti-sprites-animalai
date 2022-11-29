@@ -4,6 +4,7 @@ sudo apt-get install python3.8;
 pip install virtualenv;
 source sprites/bin/activate || virtualenv sprites --python=python3.8 && pip install -r requirements_all.txt;
 source sprites/bin/activate;
+pip -V;
 python --version;
 pip install seaborn;
 export IS_SERVER="True";
