@@ -33,7 +33,6 @@ jz_*
 /notebook
 
 report.sh
-*.sh
 *.log
 /src/wandb/
 
