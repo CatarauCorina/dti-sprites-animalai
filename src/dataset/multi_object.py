@@ -74,7 +74,7 @@ class DSpritesGrayDataset(_AbstractMultiObjectDataset):
 
 
 class CLEVR6Dataset(_AbstractMultiObjectDataset):
-    name = 'CLEVR_v1.0\CLEVR_v1.0'
+    name = 'CLEVR_v1.0/CLEVR_v1.0'
     img_size = (128, 128)
     N = 34963
     n_classes = 7
