@@ -1,11 +1,11 @@
 import os
 
 if os.environ.get('IS_SERVER', True) == 'True':
-    from cosegmentation import WeizmannHorseDataset
-    from gtsrb import GTSRB8Dataset
-    from multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
-    from instagram import InstagramDataset
-    from torchvision import SVHNDataset
+    from dataset.cosegmentation import WeizmannHorseDataset
+    from dataset.gtsrb import GTSRB8Dataset
+    from dataset.multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
+    from dataset.instagram import InstagramDataset
+    from dataset.torchvision import SVHNDataset
 
 else:
     from .cosegmentation import WeizmannHorseDataset
