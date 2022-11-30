@@ -1,6 +1,11 @@
 import numpy as np
 from PIL import Image
-from src.utils.path import DATASETS_PATH
+
+if os.environ.get('IS_SERVER', True) == 'True':
+    from utils.path import DATASETS_PATH
+else:
+    from src.utils.path import DATASETS_PATH
+
 from torchvision import transforms
 
 

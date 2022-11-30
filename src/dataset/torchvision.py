@@ -5,8 +5,13 @@ from torch.utils.data.dataset import Dataset as TorchDataset, ConcatDataset
 from torchvision.datasets import SVHN
 from torchvision.transforms import ToTensor, Compose, Resize
 
-from src.utils import use_seed
-from src.utils.path import DATASETS_PATH
+
+if os.environ.get('IS_SERVER', True) == 'True':
+    from src.utils import use_seed
+    from src.utils.path import DATASETS_PATH
+else:
+    from src.utils import use_seed
+    from src.utils.path import DATASETS_PATH
 
 
 VAL_SPLIT_RATIO = 0.1

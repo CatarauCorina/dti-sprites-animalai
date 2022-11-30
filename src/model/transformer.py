@@ -10,9 +10,14 @@ from torch.nn import functional as F
 from torch.optim import Adam, RMSprop
 from torchvision.models import vgg16_bn
 
-from .mini_resnet import get_resnet_model as get_mini_resnet_model
-from .resnet import get_resnet_model
-from .tools import copy_with_noise, get_output_size, TPSGrid, create_mlp, get_clamp_func
+if os.environ.get('IS_SERVER', True) == 'True':
+    from mini_resnet import get_resnet_model as get_mini_resnet_model
+    from resnet import get_resnet_model
+    from tools import copy_with_noise, get_output_size, TPSGrid, create_mlp, get_clamp_func
+else:
+    from .mini_resnet import get_resnet_model as get_mini_resnet_model
+    from .resnet import get_resnet_model
+    from .tools import copy_with_noise, get_output_size, TPSGrid, create_mlp, get_clamp_func
 
 
 N_HIDDEN_UNITS = 128

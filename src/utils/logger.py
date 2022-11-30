@@ -1,7 +1,10 @@
 import logging
 import time
 
-from . import coerce_to_path_and_check_exist
+if os.environ.get('IS_SERVER', True) == 'True':
+    from utils import coerce_to_path_and_check_exist
+else:
+    from . import coerce_to_path_and_check_exist
 
 
 class TerminalColors:

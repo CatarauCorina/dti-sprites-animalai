@@ -6,8 +6,12 @@ import numpy as np
 from torch.utils.data.dataset import Dataset as TorchDataset
 from torchvision.transforms import ToTensor, Compose, Resize
 
-from src.utils import coerce_to_path_and_check_exist, use_seed
-from src.utils.path import DATASETS_PATH
+if os.environ.get('IS_SERVER', True) == 'True':
+    from utils import coerce_to_path_and_check_exist, use_seed
+    from utils.path import DATASETS_PATH
+else:
+    from src.utils import coerce_to_path_and_check_exist, use_seed
+    from src.utils.path import DATASETS_PATH
 
 
 class _AbstractMultiObjectDataset(TorchDataset):

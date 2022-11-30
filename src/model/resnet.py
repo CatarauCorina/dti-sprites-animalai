@@ -2,7 +2,11 @@ import torch
 import torch.nn as nn
 from torch.utils.model_zoo import load_url as load_state_dict_from_url
 
-from .tools import conv3x3, conv1x1
+if os.environ.get('IS_SERVER', True) == 'True':
+    from tools import conv3x3, conv1x1
+else:
+    from .tools import conv3x3, conv1x1
+
 
 model_urls = {
     'resnet18': 'https://download.pytorch.org/models/resnet18-5c106cde.pth',

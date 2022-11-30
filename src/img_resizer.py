@@ -1,6 +1,10 @@
 import argparse
 
-from src.utils.image import ImageResizer
+if os.environ.get('IS_SERVER', True) == 'True':
+    from utils.image import ImageResizer
+else:
+    from src.utils.image import ImageResizer
+
 
 
 if __name__ == "__main__":
