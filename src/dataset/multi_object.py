@@ -7,7 +7,7 @@ import numpy as np
 from torch.utils.data.dataset import Dataset as TorchDataset
 from torchvision.transforms import ToTensor, Compose, Resize
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from utils import coerce_to_path_and_check_exist, use_seed
     from utils.path import DATASETS_PATH
 else:
@@ -48,7 +48,11 @@ class _AbstractMultiObjectDataset(TorchDataset):
         if self.split == 'val':
             idx = self.val_indices[idx]
         base = '00000'
-        inp = self.transform(Image.open(path / 'images'/'train'/ f'CLEVR_train_{str(idx).zfill(6)}.png').convert('RGB'))
+        if self.name == 'CLEVR_v1.0/CLEVR_v1.0':
+            inp = self.transform(Image.open(path / 'images'/'train'/ f'CLEVR_train_{str(idx).zfill(6)}.png').convert('RGB'))
+        elif self.name == 'animal-ai-competition':
+            inp = self.transform(
+                Image.open(path / 'images' / 'train' / f'{idx}.png').convert('RGB'))
         if self.eval_semantic:
             label = (self.transform_gt(Image.open(path / 'sem_masks' / f'{idx}.png').convert('L')) * 255).long()
         else:

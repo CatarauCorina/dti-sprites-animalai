@@ -5,7 +5,7 @@ import os
 from torch.utils.data.dataset import Dataset as TorchDataset
 from torchvision.transforms import CenterCrop, Compose, ToTensor
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from utils import coerce_to_path_and_check_exist, get_files_from_dir
     from utils.image import IMG_EXTENSIONS
     from utils.path import DATASETS_PATH

@@ -4,7 +4,7 @@ import os
 import numpy as np
 import torch
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from utils import coerce_to_path_and_check_exist, coerce_to_path_and_create_dir, get_files_from_dir
     from utils.logger import print_info, print_warning
 else:

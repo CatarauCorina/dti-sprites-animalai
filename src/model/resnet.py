@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.model_zoo import load_url as load_state_dict_from_url
 import os
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from model.tools import conv3x3, conv1x1
 else:
     from .tools import conv3x3, conv1x1

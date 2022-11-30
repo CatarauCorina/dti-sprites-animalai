@@ -6,7 +6,7 @@ import torch
 from torch.optim import Adam, RMSprop
 import torch.nn as nn
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from model.transformer import PrototypeTransformationNetwork as Transformer, N_HIDDEN_UNITS, N_LAYERS
     from model.tools import (copy_with_noise, generate_data, create_gaussian_weights, get_clamp_func,
                     create_mlp)

@@ -1,7 +1,7 @@
 import torch
 import os
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from utils import coerce_to_path_and_check_exist
     from model.dti_sprites import DTISprites
     from model.tools import safe_model_state_dict

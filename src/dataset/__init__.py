@@ -1,6 +1,6 @@
 import os
 
-if os.environ.get('IS_SERVER', True) == 'True':
+if bool(os.environ.get('IS_SERVER',True)) == True:
     from dataset.cosegmentation import WeizmannHorseDataset
     from dataset.gtsrb import GTSRB8Dataset
     from dataset.multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
