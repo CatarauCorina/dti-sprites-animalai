@@ -10,4 +10,4 @@ python --version;
 pip install seaborn;
 pip install scipy==1.9.3;
 export IS_SERVER="True";
-pip freeze && python src/trainer.py --tag default --config clevr6.yml;
+pip freeze && python src/trainer.py --tag default --config animalai.yml;
