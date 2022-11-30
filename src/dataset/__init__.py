@@ -1,8 +1,18 @@
-from .cosegmentation import WeizmannHorseDataset
-from .gtsrb import GTSRB8Dataset
-from .multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
-from .instagram import InstagramDataset
-from .torchvision import SVHNDataset
+import os
+
+if os.environ.get('IS_SERVER', True) == 'True':
+    from cosegmentation import WeizmannHorseDataset
+    from gtsrb import GTSRB8Dataset
+    from multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
+    from instagram import InstagramDataset
+    from torchvision import SVHNDataset
+
+else:
+    from .cosegmentation import WeizmannHorseDataset
+    from .gtsrb import GTSRB8Dataset
+    from .multi_object import DSpritesGrayDataset, TetrominoesDataset, CLEVR6Dataset
+    from .instagram import InstagramDataset
+    from .torchvision import SVHNDataset
 
 
 def get_dataset(dataset_name):

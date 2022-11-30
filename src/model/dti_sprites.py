@@ -1,6 +1,7 @@
 from copy import deepcopy
 from itertools import chain
 
+import os
 import torch
 from torch.optim import Adam, RMSprop
 import torch.nn as nn

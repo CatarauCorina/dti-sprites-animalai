@@ -1,5 +1,6 @@
 from abc import ABCMeta
 
+import os
 import numpy as np
 from torch.utils.data.dataset import Dataset as TorchDataset, ConcatDataset
 from torchvision.datasets import SVHN

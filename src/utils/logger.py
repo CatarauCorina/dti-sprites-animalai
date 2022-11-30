@@ -1,6 +1,6 @@
 import logging
 import time
-
+import os
 if os.environ.get('IS_SERVER', True) == 'True':
     from utils import coerce_to_path_and_check_exist
 else:

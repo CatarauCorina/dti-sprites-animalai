@@ -1,6 +1,6 @@
 import numpy as np
 from PIL import Image
-
+import os
 if os.environ.get('IS_SERVER', True) == 'True':
     from utils.path import DATASETS_PATH
 else:

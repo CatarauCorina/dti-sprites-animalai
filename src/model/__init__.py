@@ -1,8 +1,15 @@
 import torch
+import os
 
-from src.utils import coerce_to_path_and_check_exist
-from .dti_sprites import DTISprites
-from .tools import safe_model_state_dict
+if os.environ.get('IS_SERVER', True) == 'True':
+    from utils import coerce_to_path_and_check_exist
+    from dti_sprites import DTISprites
+    from tools import safe_model_state_dict
+else:
+    from src.utils import coerce_to_path_and_check_exist
+    from .dti_sprites import DTISprites
+    from .tools import safe_model_state_dict
+
 
 
 def get_model(name):

@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.metrics.cluster import normalized_mutual_info_score as nmi_score
 from scipy.optimize import linear_sum_assignment
 from scipy.special import comb
-
+import os
 if os.environ.get('IS_SERVER', True) == 'True':
     from logger import print_warning
 else:

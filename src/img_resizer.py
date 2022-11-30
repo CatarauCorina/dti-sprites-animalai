@@ -1,5 +1,5 @@
 import argparse
-
+import os
 if os.environ.get('IS_SERVER', True) == 'True':
     from utils.image import ImageResizer
 else:
