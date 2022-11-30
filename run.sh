@@ -8,5 +8,6 @@ source /content/drive/MyDrive/sprites/sprites/bin/activate || virtualenv sprites
 pip -V;
 python --version;
 pip install seaborn;
+pip install scipy;
 export IS_SERVER="True";
 pip freeze && python src/trainer.py --tag default --config clevr6.yml;
