@@ -11,9 +11,9 @@ from torch.optim import Adam, RMSprop
 from torchvision.models import vgg16_bn
 
 if os.environ.get('IS_SERVER', True) == 'True':
-    from mini_resnet import get_resnet_model as get_mini_resnet_model
-    from resnet import get_resnet_model
-    from tools import copy_with_noise, get_output_size, TPSGrid, create_mlp, get_clamp_func
+    from model.mini_resnet import get_resnet_model as get_mini_resnet_model
+    from model.resnet import get_resnet_model
+    from model.tools import copy_with_noise, get_output_size, TPSGrid, create_mlp, get_clamp_func
 else:
     from .mini_resnet import get_resnet_model as get_mini_resnet_model
     from .resnet import get_resnet_model

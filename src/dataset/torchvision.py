@@ -8,8 +8,8 @@ from torchvision.transforms import ToTensor, Compose, Resize
 
 
 if os.environ.get('IS_SERVER', True) == 'True':
-    from src.utils import use_seed
-    from src.utils.path import DATASETS_PATH
+    from utils import use_seed
+    from utils.path import DATASETS_PATH
 else:
     from src.utils import use_seed
     from src.utils.path import DATASETS_PATH
