@@ -52,7 +52,7 @@ class _AbstractMultiObjectDataset(TorchDataset):
             inp = self.transform(Image.open(path / 'images'/'train'/ f'CLEVR_train_{str(idx).zfill(6)}.png').convert('RGB'))
         elif self.name == 'animal-ai-competition':
             inp = self.transform(
-                Image.open(path / 'images' / 'train' / f'{idx}.png').convert('RGB'))
+                Image.open(path / 'train' / f'{idx}.png').convert('RGB'))
         if self.eval_semantic:
             label = (self.transform_gt(Image.open(path / 'sem_masks' / f'{idx}.png').convert('L')) * 255).long()
         else:
@@ -87,6 +87,8 @@ class CLEVR6Dataset(_AbstractMultiObjectDataset):
 class AnimalAIDataset(_AbstractMultiObjectDataset):
     name= 'animal-ai-competition'
     img_size = (128, 128)
+    N = 18273
+
 
 
 class TetrominoesDataset(_AbstractMultiObjectDataset):
