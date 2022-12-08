@@ -265,7 +265,7 @@ class Trainer:
 
     def load_from_tag(self, tag, resume=False):
         self.print_and_log_info("Loading model from run {}".format(tag))
-        path = coerce_to_path_and_check_exist(RUNS_PATH / self.dataset_name / tag / MODEL_FILE)
+        path = coerce_to_path_and_check_exist(RUNS_PATH / self.dataset_name / tag)
         checkpoint = torch.load(path, map_location=self.device)
         self.model.load_state_dict(checkpoint["model_state"])
         try:
