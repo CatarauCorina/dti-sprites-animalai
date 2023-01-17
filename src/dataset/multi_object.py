@@ -53,6 +53,9 @@ class _AbstractMultiObjectDataset(TorchDataset):
         elif self.name == 'animal-ai-competition':
             inp = self.transform(
                 Image.open(path / 'train' / f'{idx}.png').convert('RGB'))
+        elif self.name == 'create-finetune':
+            inp = self.transform(
+                Image.open(path / 'train' / f'{idx}.png').convert('RGB'))
         if self.eval_semantic:
             label = (self.transform_gt(Image.open(path / 'sem_masks' / f'{idx}.png').convert('L')) * 255).long()
         else:
@@ -88,6 +91,12 @@ class AnimalAIDataset(_AbstractMultiObjectDataset):
     name= 'animal-ai-competition'
     img_size = (128, 128)
     N = 18273
+
+
+class CreateDataset(_AbstractMultiObjectDataset):
+    name= 'create-finetune'
+    img_size = (128, 128)
+    N = 1465
 
 
 

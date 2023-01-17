@@ -18,7 +18,7 @@ except ModuleNotFoundError:
 
 import os
 
-if bool(os.environ.get('IS_SERVER',True)) == True:
+if os.environ.get('IS_SERVER') == 'True':
     from dataset import get_dataset
     from model import get_model
     from model.tools import count_parameters, safe_model_state_dict
