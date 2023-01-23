@@ -98,7 +98,7 @@ class AnimalAIDataset(_AbstractMultiObjectDataset):
 class AnimalAICuratedDataset(_AbstractMultiObjectDataset):
     name= 'animal-ai-curated'
     img_size = (128, 128)
-    N = 1865
+    N = 1866
 
 
 class CreateDataset(_AbstractMultiObjectDataset):

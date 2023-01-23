@@ -38,13 +38,13 @@ training:
     gamma: [1, 0.1]
     milestones: [250, 400]
   n_epoches: 450
-  train_stat_interval: 1000
-  val_stat_interval: 2000
+  train_stat_interval: 100
+  val_stat_interval: 200
   check_cluster_interval: 250
   eval_with_bkg: True
   eval_semantic: True
   seed: 41459
   visualizer_port:
   pretrained:
-  resume: 
+  resume:
   is_hyperion: False
