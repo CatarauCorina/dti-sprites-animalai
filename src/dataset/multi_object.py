@@ -56,6 +56,9 @@ class _AbstractMultiObjectDataset(TorchDataset):
         elif self.name == 'create-finetune':
             inp = self.transform(
                 Image.open(path / 'train' / f'{idx}.png').convert('RGB'))
+        elif self.name == 'animal-ai-curated':
+            inp = self.transform(
+                Image.open(path / 'train' / f'{idx}.png').convert('RGB'))
         if self.eval_semantic:
             label = (self.transform_gt(Image.open(path / 'sem_masks' / f'{idx}.png').convert('L')) * 255).long()
         else:

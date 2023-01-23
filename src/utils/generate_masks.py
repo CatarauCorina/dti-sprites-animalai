@@ -13,8 +13,8 @@ from torchvision import transforms
 
 def create_masks():
     count = 0
-    max_masks = 1465
-    path = f'{DATASETS_PATH}/create-finetune'
+    max_masks = 1865
+    path = f'{DATASETS_PATH}/animal_ai_curated'
     blackblankimage = transforms.ToPILImage()(np.zeros(shape=[128, 128, 3], dtype=np.uint8))
     while count < max_masks:
         blackblankimage.save(f'{path}/masks/{count}.png')
