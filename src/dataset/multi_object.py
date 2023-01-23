@@ -92,6 +92,11 @@ class AnimalAIDataset(_AbstractMultiObjectDataset):
     img_size = (128, 128)
     N = 18273
 
+class AnimalAICuratedDataset(_AbstractMultiObjectDataset):
+    name= 'animal-ai-curated'
+    img_size = (128, 128)
+    N = 1865
+
 
 class CreateDataset(_AbstractMultiObjectDataset):
     name= 'create-finetune'
