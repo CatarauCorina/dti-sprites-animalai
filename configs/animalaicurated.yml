@@ -46,5 +46,5 @@ training:
   seed: 41459
   visualizer_port:
   pretrained:
-  resume: "/content/drive/MyDrive/sprites/runs/animalai-curated/default/model_250.pkl"
+  resume: 
   is_hyperion: False
